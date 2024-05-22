@@ -9,6 +9,7 @@ def products_list_api_view(request):
     products = Product.objects.all()
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
+
 @api_view(['GET'])
 def category_list(request, ):
     categories = Category.objects.all()
