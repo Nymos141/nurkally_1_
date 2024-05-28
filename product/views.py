@@ -64,7 +64,7 @@ def product_detail(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = ProductSerializer(product)
+        serializer = ProductDetailSerializer(product)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
@@ -115,4 +115,3 @@ def review_detail(request, id):
     elif request.method == "DELETE":
         review.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
